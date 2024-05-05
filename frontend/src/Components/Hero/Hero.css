@@ -1,5 +1,5 @@
 .hero{
-    height: 150vh;
+    height: 120vh;
     background:linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
     display: flex;
 
@@ -13,11 +13,11 @@
     justify-content: center;
     gap: 20px;
     padding-left: 180px;
-    /* line-height: 1.1; */
+    line-height: 1.1;
 }
 .hero_left h2{
     color: #090909;
-    font-size: 26px;
+    font-size: 30px;
     font-weight: 600;
 }
 .hero_left p{
@@ -33,7 +33,8 @@
 
 }
 .hero_hand_icon img{
-    width: 105px;
+    width: 100px;
+    height: 30px;
 
 }
 
