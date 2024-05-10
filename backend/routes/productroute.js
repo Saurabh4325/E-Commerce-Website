@@ -39,6 +39,7 @@ router.post('/addproduct', async (req, res) => {
 
 // fetch all deta
 router.get("/allproduct",async(req, res)=>{
+    console.log("object")
     const product = await Product.find({})
     res.send(product)
 })
