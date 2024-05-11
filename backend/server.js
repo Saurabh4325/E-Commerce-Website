@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const multer = require('multer');
 const productRouter = require('./routes/productroute')
+const userRoute = require('./routes/userRoute')
 const port = 4000;
 
 
@@ -17,6 +18,8 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 app.use(productRouter)
+app.use(userRoute)
+
 
 
 
@@ -37,7 +40,7 @@ app.post("/upload", upload.single('product'), (req, res) => {
   
   res.json({
       success: 1,
-      img_url: `http://localhost:${port}/images/${req.file.fieldname}`
+      img_url: `http://localhost:${port}/images/${req.file.filename}`
   })
 })
 

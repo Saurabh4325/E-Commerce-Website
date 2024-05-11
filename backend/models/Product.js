@@ -15,10 +15,10 @@ db.once('open', () => {
 
 // Product Model
 const ProductSchema = new mongoose.Schema({
-    id: {
-      type: Number,
-      required: true
-    },
+    // id: {
+    //   type: Number,
+    //   required: true
+    // },
     name: {
       type: String,
       required: true

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { userContext } from '../../App'
 const Navbar = () => {
   const [menu, setMenu] = useState("shop");
-  const {getTotalCartItem} = useContext(userContext)
+  const { getTotalCartItem } = useContext(userContext)
   return (
     <div className='Navbar'>
       <Link to="/"> <div className="nav_logo">
@@ -20,7 +20,11 @@ const Navbar = () => {
         <li onClick={() => setMenu("kids")}><Link style={{ "textDecoration": "none" }} to="/kids">Kids</Link>{menu === "kids" ? <hr /> : <></>}</li>
       </ul>
       <div className="nav_login_cart">
-        <Link style={{ "textDecoration": "none" }} to="/login"><button>Login</button></Link>
+        {localStorage.getItem('token') ? <button onClick={() => {
+          localStorage.removeItem('token');
+          window.location.replace('/')
+        }}>Logout</button> :
+          <Link style={{ "textDecoration": "none" }} to="/login"><button>Login</button></Link>}
         <Link style={{ "textDecoration": "none" }} to="/cart"> <img src={cart_icon} alt="" /></Link>
         <div className="nav_cart_count">{getTotalCartItem()}</div>
       </div>
