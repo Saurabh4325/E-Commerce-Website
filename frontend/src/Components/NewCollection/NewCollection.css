@@ -28,3 +28,26 @@
     margin-top: 50px;
     gap: 30px;
  }
+ 
+ 
+ @media(max-width:1280px){
+   .new_collection{
+      height: 70vh;
+   }
+   .new_collection{
+      
+   }
+ }
+
+
+ @media(max-width:500px){
+   .new_collection{
+      height: 70vh;
+   }
+   .new_collection hr{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      /* height: 600px; */
+      /* margin-bottom: 900px; */
+   }
+ }

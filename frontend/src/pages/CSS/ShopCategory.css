@@ -41,3 +41,12 @@
     font-size: 18px;
     cursor: pointer;
 }
+@media(max-width:1280px){
+    .shopcategory_banner{
+        margin: 20px 80px;
+        width: 90%;
+    }
+    .shopcategory_indexsort{
+        width: 90%;
+    }
+}

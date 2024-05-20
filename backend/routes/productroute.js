@@ -3,9 +3,9 @@ const router = express.Router();
 const Product = require('../models/Product')
 
 
-//create a product
+// create a product
 // router.post('/addproduct', async (req, res) => {
-//     console.log("addproduct")
+//     console.log(req.body)
 //     try {
 //         let products = await Product.find({})
 //         let id;      
@@ -26,20 +26,35 @@ const Product = require('../models/Product')
 //             new_price: req.body.new_price,
 //             old_price: req.body.old_price
 //         });
-//         console.log(products);
-//         console.log("Product saved");
-//         res.json({
-//             success: true,
-//             name: req.body.name
-//         });
+//         console.log("products");
+//         res.send(products)
+//         // console.log("Product saved");
+//         // res.json({
+//         //     success: true,
+//         //     name: req.body.name
+//         // });
 //     } catch (error) {
 //         console.error("Error saving product:", error);
 //         res.status(500).json({ success: false, error: "Error saving product" });
 //     }
 // });
 
-router.post("/addproduct",async(req,res)=>{
-    res.send("he")
+
+
+// creating data
+router.post('/addproduct',async(req,res)=>{
+    try {
+        console.log("hitted")
+        const product = await Product.create({
+            name:req.body.name,
+            category:req.body.category,
+            new_price:req.body.new_price,
+            old_price:req.body.old_price, 
+        })
+        console.log(product.name)
+    } catch (error) {
+        console.log("some thing is error",error.message)
+    }
 })
 
 // fetch all deta
